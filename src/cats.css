@@ -1,0 +1,29 @@
+body {
+    background: #171420;
+    color: #B5AD9A;
+}
+
+#cats {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+#cats li {
+    list-style: none;
+    display: flex;
+    height: 200px;
+    width: 150px;
+    border: 1px solid black;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background: whitesmoke;
+}
+
+.name {
+    font-size: 1em;
+}
