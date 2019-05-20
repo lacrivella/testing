@@ -1,19 +1,18 @@
 const test = QUnit.test;
-function template() {
-    const html = `
+function template(cat) {
+    return /*html*/`
         <li>
-            <h2 id="name">Felix</h2>
-            <p class="type">the Tuxedo</p>
+            <h2 id="name">${cat.name}</h2>
+            <p class="type">${cat.type}</p>
         </li>
-`;
-    return html;
+    `;
 }
 
-test('', function(assert) {
+test('cat template', function(assert) {
     //Arrange
     const cat = {
         name: 'Felix',
-        type: 'Tuxedo'
+        type: 'the Tuxedo'
     };
  
     const expected = /*html*/ `
@@ -21,11 +20,12 @@ test('', function(assert) {
             <h2 id="name">Felix</h2>
             <p class="type">the Tuxedo</p>
         </li>
-        `;
+     `;
+
     //Act 
     const html = template(cat);
 
     //Assert
-    assert.equal(html, expected);
+    assert.htmlEqual(html, expected);
  
 });
