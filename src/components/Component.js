@@ -16,7 +16,10 @@ class Component {
     }
 
     update(props) {
-        this.props = props;
+        // update the props:
+        Object.keys(props).forEach(key => {
+            this.props[key] = props[key];
+        });
         const oldRoot = this.rootElement;
         const newDOM = this.render();
         oldRoot.replaceWith(newDOM);

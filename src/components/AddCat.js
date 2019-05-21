@@ -16,6 +16,9 @@ class AddCat extends Component {
                 type: formData.get('type')
             };
             onAdd(newCat);
+
+            form.reset();
+            document.activeElement.getBoundingClientRect();
         });
 
         return form;
