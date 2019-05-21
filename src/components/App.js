@@ -1,8 +1,8 @@
 import Component from './Component.js';
 import Header from './Header.js';
+import AddCat from './AddCat.js';
 import CatList from './CatList.js';
 import cats from '../../data/cats.js';
-import AddCat from './AddCat.js';
 
 class App extends Component {
 
@@ -15,7 +15,7 @@ class App extends Component {
         const main = dom.querySelector('main');
         dom.insertBefore(headerDOM, main);
 
-        const props = { cats };
+        // const props = { cats };
 
         const addCat = new AddCat({
             onAdd: (newCat) => {
@@ -30,7 +30,16 @@ class App extends Component {
         const addCatDOM = addCat.render();
         main.appendChild(addCatDOM);
 
-        const catList = new CatList(props);
+        const catList = new CatList ({
+            cats,
+            onRemove: (catToRemove) => {
+                //remove from array
+                const index = cats.indexOf(catToRemove);
+                cats.splice(index, 1);
+
+                catList.update({ cats });
+            }
+        });
         const catListDOM = catList.render();
         main.appendChild(catListDOM);
 

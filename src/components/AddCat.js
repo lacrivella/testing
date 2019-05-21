@@ -18,7 +18,7 @@ class AddCat extends Component {
             onAdd(newCat);
 
             form.reset();
-            document.activeElement.getBoundingClientRect();
+            document.activeElement.blur();
         });
 
         return form;

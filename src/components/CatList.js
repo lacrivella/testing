@@ -6,13 +6,14 @@ class CatList extends Component {
         const list = this.renderDOM();
 
         const cats = this.props.cats;
+        const onRemove = this.props.onRemove;
 
         cats.forEach(cat => {
-            const catItem = new CatItem({ cat });
+            const catItem = new CatItem({ cat, onRemove });
             const catItemDOM = catItem.render();
             list.appendChild(catItemDOM);
         });
-        
+
         // cats
         //     .map(cat => new CatItem({ cat }))
         //     .map(CatItem => catItem.render())

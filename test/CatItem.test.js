@@ -14,6 +14,7 @@ test('template', assert => {
         <li>
             <h2 class="name">Felix</h2>
             <p class="type">the Tuxedo</p>
+            <button>X</button>
         </li>
      `;
 
