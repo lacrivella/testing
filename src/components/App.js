@@ -19,7 +19,12 @@ class App extends Component {
 
         const addCat = new AddCat({
             onAdd: (newCat) => {
-                console.log('onAdd event w cat', newCat);
+                // update the array
+                cats.unshift(newCat); 
+                //unshift adds to beginning, push is at the end
+
+                // update CatList
+                catList.update({ cats });
             }
         });
         const addCatDOM = addCat.render();
